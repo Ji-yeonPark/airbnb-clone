@@ -7,7 +7,13 @@ class ItemAdmin(admin.ModelAdmin):
 
     """Item Admin Definition"""
 
-    pass
+    list_display = (
+        "name",
+        "used_by",
+    )
+
+    def used_by(self, obj):
+        return obj.rooms.count()
 
 
 @admin.register(models.Room)
@@ -46,6 +52,8 @@ class RoomAdmin(admin.ModelAdmin):
         "check_out",
         "instant_book",
         "count_amenities",
+        "count_photos",
+        "total_rating",
     )
 
     ordering = ("name",)
@@ -73,7 +81,10 @@ class RoomAdmin(admin.ModelAdmin):
         object: 현재 행(row)
         """
         # print(obj.amenities.all()) -> QuerySet
-        return "P"
+        return obj.amenities.count()
+
+    def count_photos(self, obj):
+        return obj.photos.count()
 
     # 필드 명 변경 (변경하면 자동 정렬 안됨.)
     # count_amenities.short_description = "amenity"
