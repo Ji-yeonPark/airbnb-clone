@@ -87,10 +87,7 @@ class SearchView(View):
                 # qs = rooms.order_by("name")
                 paginator = Paginator(rooms, 3)
                 page = request.GET.get("page", 1)
-
-                print(page)
                 rooms = paginator.get_page(page)
-                print(rooms)
 
                 return render(
                     request, "rooms/search.html", {"form": form, "rooms": rooms},

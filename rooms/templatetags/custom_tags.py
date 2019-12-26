@@ -6,7 +6,7 @@ register = template.Library()
 
 
 def get_page(url):
-    """URL Parsing 후 현재 Page 번호 반환"""
+    """Return current page number after URL Parsing."""
 
     parsed = urlparse(url)
     return int(parse_qs(parsed.query)["page"][0])
@@ -14,6 +14,8 @@ def get_page(url):
 
 @register.filter(name="prevpage")
 def prevpage(url, cur):
+    """Change the URL to previous page number."""
+
     if url.find("&page=") > -1:
         page = get_page(url)
         return url.replace(f"page={page}", f"page={page-1}")
@@ -23,6 +25,8 @@ def prevpage(url, cur):
 
 @register.filter(name="nextpage")
 def nextpage(url, cur):
+    """Change the URL to next page number."""
+
     if url.find("&page=") > -1:
         page = get_page(url)
         return url.replace(f"page={page}", f"page={page+1}")
