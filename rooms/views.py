@@ -84,7 +84,6 @@ class SearchView(View):
                         facilities__pk=facility.pk
                     )
 
-                # qs = rooms.order_by("name")
                 paginator = Paginator(rooms, 3)
                 page = request.GET.get("page", 1)
                 rooms = paginator.get_page(page)
