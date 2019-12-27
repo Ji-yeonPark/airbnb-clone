@@ -8,7 +8,7 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput)
 
     def clean(self):
-        email = self.cleaned_data.email
+        email = self.cleaned_data.get("email")
         password = self.cleaned_data.get("passowrd")
 
         try:
@@ -18,7 +18,7 @@ class LoginForm(forms.Form):
             else:
                 # raise forms.ValidationError("Password is wrong") # 전역
                 self.add_error("password", forms.ValidationError("Password is wrong"))
-        except models.User.DoseNotExist:
+        except models.User.DoesNotExist:
             # raise forms.ValidationError("User does not exist") # 전역
             self.add_error("email", forms.ValidationError("User does not exist"))
 
