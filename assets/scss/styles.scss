@@ -1,3 +1,56 @@
 @tailwind base;
 @tailwind components;
+
+.search-box {
+  transition: box-shadow 0.2s linear;
+}
+
+.nav_link {
+  @apply ml-5 border-b-2 border-white h-full flex items-center;
+
+  a {
+    @apply py-10 px-5;
+  }
+
+  &:hover {
+    @apply border-gray-600;
+  }
+}
+
+.btn {
+  @apply w-full mb-2 text-center text-lg font-light rounded-sm py-5 font-medium;
+}
+
+div.input {
+  @apply mb-3;
+
+  .icon-input {
+    @apply rounded-sm py-5 font-light text-lg w-full text-left border border-gray-600 px-5 flex justify-between;
+
+    &:focus-within {
+      border-color: #38b2ac;
+    }
+
+    input {
+      outline: none;
+    }
+
+    :first-child {
+      @apply w-full;
+    }
+
+    i {
+      @apply text-gray-600;
+    }
+
+    &.has_error {
+      @apply border-red-500 bg-red-300;
+
+      * {
+        @apply bg-red-300;
+      }
+    }
+  }
+}
+
 @tailwind utilities;
