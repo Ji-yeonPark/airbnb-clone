@@ -8,8 +8,12 @@
         <i class="far fa-envelope"></i>
       {% elif "password" in field.label|lower %}
         <i class="fas fa-lock"></i>
-      {% else %}
+      {% elif "name" in field.label|lower %}
         <i class="far fa-user"></i>
+      {% elif field.label|lower == "currency" %}
+        <i class="fas fa-coins"></i>
+      {% elif field.label|lower == "language" %}
+        <i class="fas fa-language"></i>
       {% endif %}
     </div>
   </div>

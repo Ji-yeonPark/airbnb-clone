@@ -21,6 +21,15 @@
   @apply w-full mb-2 text-center text-lg font-light rounded-sm py-5 font-medium;
 }
 
+.btn-link {
+  @apply text-center py-3 rounded-lg font-light text-lg w-full text-white bg-red-500;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
 div.input {
   @apply mb-3;
 
@@ -50,6 +59,43 @@ div.input {
         @apply bg-red-300;
       }
     }
+  }
+}
+
+@keyframes messageFadeIn {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.message {
+  animation: messageFadeIn 5s ease-in-out forwards;
+  &.error {
+    @apply bg-red-600;
+    transform: translateY(50px);
+  }
+  &.debug {
+  }
+  &.info {
+    @apply bg-blue-600;
+    transform: translateY(50px);
+  }
+  &.success {
+    @apply bg-green-600;
+    transform: translateY(50px);
+  }
+  &.warning {
+    @apply bg-yellow-400;
+    transform: translateY(50px);
   }
 }
 
