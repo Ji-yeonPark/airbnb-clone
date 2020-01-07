@@ -3,6 +3,7 @@ from django_countries.fields import CountryField
 from core import models as core_models
 
 # Create your models here.
+NO_PICTURE_URL = "/static/img/image-not-found.jpg"
 
 
 class AbstractItem(core_models.TimeStampedModel):
@@ -109,5 +110,11 @@ class Room(core_models.TimeStampedModel):
         if photos:
             return photos[0].file.url
         else:
-            return "/static/img/image-not-found.jpg"
+            return NO_PICTURE_URL
+
+    def get_next_four_photos(self):
+        photos = self.photos.all()[1:5]
+        if not photos:
+            return [NO_PICTURE_URL for _ in range(0, 4)]
+        return photos
 

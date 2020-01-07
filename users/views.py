@@ -64,7 +64,6 @@ def complete_verification(request, key):
         user.save()
         messages.success(request, f"Complete verification")
     except models.User.DoesNotExist:
-        # TODO: Add error message
         messages.error(request, f"User does not exist")
         pass
     return redirect(reverse("core:home"))
