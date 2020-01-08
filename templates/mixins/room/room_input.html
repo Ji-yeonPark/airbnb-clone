@@ -1,0 +1,30 @@
+<div class="input">
+  <div>
+      {{field.label}}
+  </div>
+  <div class="icon-input {% if field.errors %}has_error{% endif %}">
+    <div>
+      {{field}}
+    </div>
+    <div>
+      {% if field.label|lower == "email"  %}
+        <i class="far fa-envelope"></i>
+      {% elif "password" in field.label|lower %}
+        <i class="fas fa-lock"></i>
+      {% elif "name" in field.label|lower %}
+        <i class="far fa-user"></i>
+      {% elif field.label|lower == "currency" %}
+        <i class="fas fa-coins"></i>
+      {% elif field.label|lower == "language" %}
+        <i class="fas fa-language"></i>
+      {% endif %}
+    </div>
+  </div>
+  <div class="error">
+    {% if field.errors %}
+      {% for error in field.errors %}
+        <span class="text-red-700 font-medium text-sm">{{error}}</span>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
