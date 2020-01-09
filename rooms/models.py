@@ -1,6 +1,8 @@
+from django.utils import timezone
 from django.db import models
 from django_countries.fields import CountryField
 from core import models as core_models
+from cal import Calendar
 
 # Create your models here.
 NO_PICTURE_URL = "/static/img/image-not-found.jpg"
@@ -118,3 +120,8 @@ class Room(core_models.TimeStampedModel):
             return [NO_PICTURE_URL for _ in range(0, 4)]
         return photos
 
+    def get_calendars(self):
+        now = timezone.now()
+        this_month = Calendar(now.year, now.month)
+        next_month = Calendar(now.year, 1 if now.month == 12 else now.month + 1)
+        return [this_month, next_month]
