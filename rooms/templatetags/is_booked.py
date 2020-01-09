@@ -17,8 +17,3 @@ def is_booked(room, day):
         except reservation_models.BookedDay.DoesNotExist:
             return False
 
-
-@register.filter
-def uppercase(val):
-    return val.isupper()
-
