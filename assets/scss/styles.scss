@@ -62,6 +62,16 @@ div.input {
   }
 }
 
+input.input {
+  @apply rounded-sm py-5 font-light text-lg w-full text-left border border-gray-600 px-5 flex justify-between;
+
+  outline: none;
+
+  &:focus-within {
+    border-color: #38b2ac;
+  }
+}
+
 @keyframes messageFadeIn {
   0% {
     opacity: 0;
