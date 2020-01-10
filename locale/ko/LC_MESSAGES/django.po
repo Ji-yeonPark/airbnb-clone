@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-10 17:03+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: templates/base.html:32
+msgid "search by city"
+msgstr "도시 검색"
+
+#: templates/partials/footer.html:5
+msgid "Please don't copy us."
+msgstr "우리를 복사하지 마세요."
+
+#: templates/partials/footer.html:8
+msgid "All rights reserved."
+msgstr "무단 전재 금지."
+
+#: templates/rooms/room_list.html:31
+#, python-format
+msgid "Page %(current_page)s of %(total_pages)s"
+msgstr "페이지 %(total_pages)s 중 %(current_page)s"
+
+#: users/mixins.py:13 users/mixins.py:22
+msgid "Can't go there"
+msgstr "그곳으로 이동할 수 없습니다."
+
+#: users/models.py:22
+msgid "Male"
+msgstr "남"
+
+#: users/models.py:23
+msgid "Female"
+msgstr "여"
+
+#: users/models.py:24
+msgid "Other"
+msgstr "다른"
+
+#: users/models.py:30
+msgid "en"
+msgstr "영어"
+
+#: users/models.py:30
+msgid "kr"
+msgstr "한글"
+
+#: users/models.py:48
+msgid "gender"
+msgstr "성별"
