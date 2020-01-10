@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-10 17:03+0900\n"
+"POT-Creation-Date: 2020-01-10 18:26+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,10 @@ msgstr "우리를 복사하지 마세요."
 #: templates/partials/footer.html:8
 msgid "All rights reserved."
 msgstr "무단 전재 금지."
+
+#: templates/partials/navigation.html:19
+msgid "Favs"
+msgstr "선호"
 
 #: templates/rooms/room_list.html:31
 #, python-format

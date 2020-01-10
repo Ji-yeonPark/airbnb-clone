@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load is_booked %}
+{% load is_booked on_favs i18n %}
 
 {% block page_title %}
 {{room.name}}
@@ -21,7 +21,17 @@
     <div class="w-1/2">
         <div class="flex justify-between">
             <div class="mr-8">
-                <h4 class="text-3xl font-medium mb-px">{{room.name}}</h4>
+                <h4 class="text-3xl font-medium mb-px">
+                    {% on_favs room as on_favs_boolean %}
+                    <a href="{% url 'lists:toggle-room' room.pk %}?action={% if on_favs_boolean %}remove{% else %}add{% endif %}">
+                        {% if on_favs_boolean %}
+                            <i class="fas fa-heart text-red-600"></i>
+                        {% else %}
+                            <i class="far fa-heart"></i>
+                        {% endif %}
+                    </a>
+                    {{room.name}}
+                </h4>
                 <span class="text-gray-700 font-light">{{room.city}}</span>
             </div>
             <a href="{{room.host.get_absolute_url}}" class="flex flex-col items-center">
