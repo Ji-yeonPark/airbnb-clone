@@ -5,7 +5,7 @@
 - This application deployed at pythonanywhere.
 - Using python3.7, Django2.2.5, Tailwind, sqlite3, ...
 
-### 👩‍💻 url : [airbnb-clone](jiyeon.pythonanywhere.com)
+### 👩‍💻 url : [airbnb-clone](http://jiyeon.pythonanywhere.com)
 
 - django-admin account
   - root / 123
