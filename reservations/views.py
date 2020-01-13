@@ -1,6 +1,6 @@
 import datetime
 from django.http import Http404
-from django.views.generic import View
+from django.views.generic import View, ListView
 from django.contrib import messages
 from django.shortcuts import render, redirect, reverse
 from rooms import models as room_models
@@ -64,3 +64,14 @@ def edit_reservation(request, pk, verb):
     reservation.save()
     messages.success(request, "Reservation Updated")
     return redirect(reverse("reservations:detail", kwargs={"pk": reservation.pk}))
+
+
+class ReservationListView(ListView):
+
+    model = models.Reservation
+    paginate_by = 7
+    paginate_orpans = 5
+    ordering = "-created"
+
+    def get_queryset(self):
+        return models.Reservation.objects.filter(guest=self.request.user)

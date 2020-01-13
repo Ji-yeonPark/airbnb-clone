@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-10 18:26+0900\n"
+"POT-Creation-Date: 2020-01-10 22:04+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +22,10 @@ msgstr ""
 msgid "search by city"
 msgstr "도시 검색"
 
+#: templates/conversations/conversation_detail.html:59
+msgid "Send Comment"
+msgstr "전송"
+
 #: templates/partials/footer.html:5
 msgid "Please don't copy us."
 msgstr "우리를 복사하지 마세요."
@@ -30,9 +34,17 @@ msgstr "우리를 복사하지 마세요."
 msgid "All rights reserved."
 msgstr "무단 전재 금지."
 
-#: templates/partials/navigation.html:19
+#: templates/partials/navigation.html:22
 msgid "Favs"
 msgstr "선호"
+
+#: templates/reservations/reservation_list.html:61
+#, fuzzy, python-format
+#| msgid "Page %(current_page)s of %(total_pages)s"
+msgid ""
+"Page %(current_page)s\n"
+"      of %(total_pages)s"
+msgstr "페이지 %(total_pages)s 중 %(current_page)s"
 
 #: templates/rooms/room_list.html:31
 #, python-format
@@ -43,26 +55,26 @@ msgstr "페이지 %(total_pages)s 중 %(current_page)s"
 msgid "Can't go there"
 msgstr "그곳으로 이동할 수 없습니다."
 
-#: users/models.py:22
+#: users/models.py:23
 msgid "Male"
 msgstr "남"
 
-#: users/models.py:23
+#: users/models.py:24
 msgid "Female"
 msgstr "여"
 
-#: users/models.py:24
+#: users/models.py:25
 msgid "Other"
 msgstr "다른"
 
-#: users/models.py:30
+#: users/models.py:31
 msgid "en"
 msgstr "영어"
 
-#: users/models.py:30
+#: users/models.py:31
 msgid "kr"
 msgstr "한글"
 
-#: users/models.py:48
+#: users/models.py:49
 msgid "gender"
 msgstr "성별"

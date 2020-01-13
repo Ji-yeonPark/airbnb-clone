@@ -52,7 +52,18 @@
     };
     langSelect.addEventListener("change", handleLangChange);
 
-
+    const handleDiscriptionClick = (e) => {
+      const icon = e.getElementsByTagName('i')[0];
+      const discription = e.nextSibling.nextSibling;
+      
+      if (icon.classList.contains('fa-caret-right')) {
+        icon.className = icon.className.replace(/fa-caret-right/g, "fa-caret-down");
+        discription.style.display = "";
+      } else {
+        icon.className = icon.className.replace(/fa-caret-down/g, "fa-caret-right");
+        discription.style.display = "none";
+      }
+    }
   </script>
 </body>
 
