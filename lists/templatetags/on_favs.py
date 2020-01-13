@@ -7,10 +7,13 @@ register = template.Library()
 @register.simple_tag(takes_context=True)
 def on_favs(context, room):
     user = context.request.user
-    the_list = list_models.List.objects.get_or_none(
-        user=user, name="My Favourites Houses"
-    )
-    if the_list:
-        return room in the_list.rooms.all()
-    else:
+    try:
+        the_list = list_models.List.objects.get_or_none(
+            user=user, name="My Favourites Houses"
+        )
+        if the_list:
+            return room in the_list.rooms.all()
+        else:
+            return False
+    except Exception:  # if AnonymousUser
         return False

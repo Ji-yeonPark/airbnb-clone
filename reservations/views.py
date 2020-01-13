@@ -13,6 +13,9 @@ class CreateError(Exception):
 
 
 def create(request, room, year, month, day):
+    if request.user.is_anonymous:
+        messages.error(request, "Please Register.")
+        return redirect(reverse("users:login"))
     try:
         date_obj = datetime.datetime(year, month, day)
         room = room_models.Room.objects.get(pk=room)
@@ -28,7 +31,6 @@ def create(request, room, year, month, day):
             check_in=date_obj,
             check_out=date_obj + datetime.timedelta(days=1),
         )
-        print(reservation)
         return redirect(reverse("reservations:detail", kwargs={"pk": reservation.pk}))
 
 
