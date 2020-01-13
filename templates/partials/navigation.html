@@ -19,7 +19,7 @@
     </li>
   {% endif %}
   <li class="nav_link">
-    <a href="{% url 'lists:see-favs' %}">{% trans "Favs" %} ({{user.list.rooms.count}})</a>
+    <a href="{% url 'lists:see-favs' %}">{% trans "Favs" %} ({{user.list.rooms.count|default:0}})</a>
   </li>
   <li class="nav_link">
     <a href="{{ user.get_absolute_url }}">Profile</a>
